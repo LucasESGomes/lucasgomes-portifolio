@@ -136,7 +136,7 @@ const Background = () => {
             direction='down' // up, down, left, right, diagonal
             squareColor='#e7e7e7'
             backgroundColor='#fcfcfc'
-            hoverFillColor='#222'
+            hoverFillColor='#fcfcfc'
         />
     )
 }
