@@ -13,6 +13,7 @@ const Header = () => {
   const [activeItem, setActiveItem] = useState("Inicio");
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
   const navRefs = useRef({});
+  const headerRef = useRef(null);
 
   useEffect(() => {
     updateUnderline(activeItem);
@@ -30,13 +31,14 @@ const Header = () => {
 
   const handleClick = (item) => {
     setActiveItem(item);
-    // Aqui você pode adicionar a função scrollTo se necessário
-    // scrollTo(item.toLowerCase());
+    
   };
 
   return (
-    <>
-      <header className="flex w-full bg-transparent items-center h-20 justify-around p-4 text-black top-0 z-10">
+      <header 
+      ref={headerRef}
+      id="header-section"
+      className="flex w-full bg-transparent items-center h-20 justify-around p-4 sticky text-black top-0 z-10">
         {/* Nav Mobile */}
 
         <Logo />
@@ -80,7 +82,6 @@ const Header = () => {
           </Button>
         </div>
       </header>
-    </>
   );
 };
 
