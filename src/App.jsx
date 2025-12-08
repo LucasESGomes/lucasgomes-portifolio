@@ -7,12 +7,13 @@ import SkillSection from "./components/sections/SkillSection.jsx";
 function App() {
 
   return (
-    <>
+    <div className="relative">
+      
       <Background />
       <Header />
       <HeroSection />
       <SkillSection />
-    </>
+    </div>
   );
 }
 

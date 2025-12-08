@@ -1,6 +1,6 @@
 const NumberSection = ({number, title}) => {
     return (
-      <div className=" flex justify-start gap-4 items-end">
+      <div className="flex justify-start mb-15 gap-4 items-end">
         <h1 className="text-8xl text-gray-300">
           {number}
         </h1>
