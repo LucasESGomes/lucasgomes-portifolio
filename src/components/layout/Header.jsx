@@ -38,7 +38,7 @@ const Header = () => {
       <header 
       ref={headerRef}
       id="header-section"
-      className="flex w-full bg-transparent items-center h-20 justify-around p-4 sticky text-black top-0 z-50">
+      className="flex w-full bg-transparent items-center h-20 justify-around p-4 text-black top-0 z-50">
         {/* Nav Mobile */}
 
         <Logo />

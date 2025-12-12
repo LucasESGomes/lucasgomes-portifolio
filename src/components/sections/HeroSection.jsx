@@ -11,14 +11,14 @@ import { MdDownload } from "react-icons/md";
 
 const HeroSection =  () => {
     return (
-      <section className="flex h-screen w-full mt-35 justify-around item-center">
+      <section className="flex h-screen w-full mt-35 justify-around item-center relative z-0">
         {/*Informações de contanto*/}
         <div>
           <h1 className="text-gray-900 mb-7 font-extrabold text-9xl">
             Lucas <br />
             Gomes
           </h1>
-          <p className="text-gray-500  font-normal text-xl">
+          <p className="text-gray-500 font-normal text-xl">
             Web-designer e desenvolvedor Front-end
           </p>
           <div className="flex gap-12 mt-20 mb-30">
@@ -27,7 +27,7 @@ const HeroSection =  () => {
             <Social icon={FaInstagram} link="#" size={34} />
           </div>
 
-          <SectionTitle number="01" title="Habilidades" />
+          <SectionTitle number="02" title="Habilidades" />
         </div>
 
         {/*Pequeno sobre mim*/}
