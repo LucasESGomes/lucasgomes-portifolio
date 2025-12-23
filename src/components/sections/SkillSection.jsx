@@ -13,16 +13,16 @@ import Node from "/img/icon/node.webp";
 import Python from "/img/icon/python.png";
 import Express from "/img/icon/express.webp";
 import MySQL from "/img/icon/mySql.png";
-import MongoDB from "/img/icon/mongodb.png";
+import MongoDB from "/img/icon/mongoDb.png";
 
 
 import Frontend from "../../../public/img/frontend.png";
-import Image from "../../../public/img/senai-id.png"
+import Backend from "../../../public/img/backend.png";
 
 const SkillSection = () => {
   return (
-    <section id="habilidades-section">
-      <Section>
+    <section>
+      <Section id={"skill-section"}>
         <SkillCard
           version="left"
           img={Frontend}
@@ -31,7 +31,7 @@ const SkillSection = () => {
             "A minha especialidade atualmente é pro ramo de Front-end, aonde eu desenvolvi algumas habilidades incluindo o aprendizado de frameworks modernos, além de ficar responsável pelo desenvolvimento do Front-end do TCC"
           }
           tech={
-            <div className="flex ml-10 gap-1 mt-3">
+            <div className="flex ml-10 gap-1 mt-3 w-150">
               <TechItem img={React} children={"React"} />
               <TechItem img={Tailwind} children={"Tailwind"} />
               <TechItem img={Vite} children={"Vite"} />
@@ -44,17 +44,17 @@ const SkillSection = () => {
         <SkillCard
           version="right"
           title={"BACK-END"}
-          img={Image}
+          img={Backend}
           children={
             "Em algumas projeto pessoais e academicos eu desenvolvi parte do Backe-end, como a comunicação com API`S e até autenticação de usuários"
           }
           tech={
-            <div className="flex ml-10 gap-1 mt-3">
+            <div className="flex ml-10 gap-1 mt-3 w-150">
               <TechItem img={Node} children={"Node"} />
               <TechItem img={Python} children={"Python"} />
               <TechItem img={Express} children={"Express"} />
               <TechItem img={MySQL} children={"MySql"} />
-              <TechItem img={MongoDB} children={"MongoDB"} />
+              <TechItem img={MongoDB} children={"Mongo"} />
               <TechItem children={"Render"} />
             </div>
           }
