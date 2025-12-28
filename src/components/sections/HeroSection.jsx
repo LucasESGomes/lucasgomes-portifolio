@@ -11,7 +11,7 @@ import { MdDownload } from "react-icons/md";
 
 const HeroSection =  () => {
     return (
-      <section className="flex h-screen w-full mt-35 justify-around item-center relative z-0">
+      <section className="flex w-full mt-35 justify-around item-center relative z-0">
         {/*Informações de contanto*/}
         <div>
           <h1 className="text-gray-900 mb-7 font-extrabold text-9xl">

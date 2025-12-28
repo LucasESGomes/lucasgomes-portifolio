@@ -24,8 +24,8 @@ const Button = ({ children, onClick, IconComponent, type = "default" }) => {
     return (
       <button
         onClick={onClick}
-        className="px-4 py-2 w-50 h-10 rounded-full font-semibold text-black
-                transition bg-black active:scale-100"
+        className="flex justify-center items-center py-3 px-3 font-normal text-xl text-gray-800
+                transition bg-gray-300 active:scale-100 hover:bg-gray-900 hover:text-gray-100"
       >
         {children}
       </button>
