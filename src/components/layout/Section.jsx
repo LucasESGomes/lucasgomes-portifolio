@@ -1,12 +1,7 @@
-import SectionTitle from "../ui/SectionTitle.jsx";
-
-const Section = ({ id, number, title, children }) => {
+const Section = ({ id, className = "", children }) => {
   return (
-    <section id={id} className="w-[75%] mt-40 mx-auto">
-        <SectionTitle number={number} title={title} />
-      <div className="w-full flex flex-col items-start text-left">
-        <div className="w-full">{children}</div>
-      </div>
+    <section id={id} className={`relative w-full py-16 ${className}`}>
+      <div className="max-w-7xl mx-auto px-6 md:px-10">{children}</div>
     </section>
   );
 };

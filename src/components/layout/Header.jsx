@@ -1,87 +1,72 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
-//Icons
-import { FaArrowRight } from "react-icons/fa6";
-
-//Components
+import { navItems } from "../../data/profile.js";
+import { scrollToTarget } from "../../hooks/useLenis.js";
 import Logo from "../ui/Logo.jsx";
-import Button from "../ui/Button.jsx";
 
 const Header = () => {
-  const nav = ["Inicio", "Habilidades", "Projetos", "Serviços", "Contato"];
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const [activeItem, setActiveItem] = useState("Inicio");
-  const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
-  const navRefs = useRef({});
-  const headerRef = useRef(null);
-
-  useEffect(() => {
-    updateUnderline(activeItem);
-  }, [activeItem]);
-
-  const updateUnderline = (item) => {
-    const element = navRefs.current[item];
-    if (element) {
-      setUnderlineStyle({
-        left: element.offsetLeft,
-        width: element.offsetWidth,
-      });
-    }
-  };
-
-  const handleClick = (item) => {
-    setActiveItem(item);
-    
+  const handleNavigate = (event, target) => {
+    event.preventDefault();
+    setMenuOpen(false);
+    scrollToTarget(target);
   };
 
   return (
-      <header 
-      ref={headerRef}
-      id="header-section"
-      className="flex w-full bg-transparent items-center h-20 justify-around p-4 text-black top-0 z-50">
-        {/* Nav Mobile */}
+    <header className="relative z-[300]">
+      <nav className="w-full px-4 sm:px-8 md:px-16 lg:px-32 xl:px-44 py-6">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <Logo />
 
-        <Logo />
-
-        <nav className="md:flex hidden backdrop-blur-sm rounded-full border-2 scale-115 border-gray-300 shadow-md">
-          <ul className="relative flex gap-8 rounded-full px-8 py-3 shadow-md">
-            {/* Barrinha animada no topo */}
-            <span
-              className="absolute top-0 h-[3px] bg-black rounded-full transition-all duration-500 ease-out"
-              style={{
-                left: `${underlineStyle.left}px`,
-                width: `${underlineStyle.width}px`,
-              }}
-            />
-
-            {nav.map((item) => (
-              <li
-                key={item}
-                ref={(el) => (navRefs.current[item] = el)}
-                className="relative cursor-pointer transition-all duration-300"
-                onClick={() => handleClick(item)}
-              >
-                <span
-                  className={`transition-colors duration-300 ${
-                    activeItem === item
-                      ? "text-black font-medium"
-                      : "text-gray-400"
-                  } hover:text-gray-600`}
+          <ul className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            {navItems.map((item) => (
+              <li key={item.target}>
+                <a
+                  href={item.target}
+                  onClick={(event) => handleNavigate(event, item.target)}
+                  className="text-gray-700 hover:text-black transition-colors duration-200"
                 >
-                  {item}
-                </span>
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>
-        </nav>
 
-        <div className="md:flex hidden">
-          <Button type="default">
-            Entre em contato
-            <FaArrowRight />
-          </Button>
+          {/* Hamburger */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+            className="lg:hidden w-6 h-6 flex flex-col justify-center items-center space-y-1 z-50 relative cursor-pointer"
+          >
+            <span className={`w-4 h-0.5 bg-black transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`} />
+            <span className={`w-4 h-0.5 bg-black transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`w-4 h-0.5 bg-black transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
+          </button>
         </div>
-      </header>
+      </nav>
+
+      {/* Mobile menu */}
+      <div
+        className={`lg:hidden fixed inset-0 bg-white z-40 transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
+        <ul className="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8">
+          {navItems.map((item) => (
+            <li key={item.target}>
+              <a
+                href={item.target}
+                onClick={(event) => handleNavigate(event, item.target)}
+                className="text-xl sm:text-2xl text-gray-700 hover:text-black transition-colors duration-200"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
   );
 };
 

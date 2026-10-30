@@ -1,20 +1,8 @@
-const Photo = ({ height = "8" }) => {
-  const Dimension = {
-    8: "h-8",
-    16: "h-16",
-    24: "h-24",
-    32: "h-32",
-    64: "h-66",
-  };
-
+const Photo = ({ src, alt }) => {
   return (
-    <img
-      className={`${
-        Dimension[height] || "h-8"
-      } aspect-square rounded-full object-cover object-center overflow-hidden border-[#000000] border-1`}
-      src="../../public/img/Gomes.webp"
-      alt="Minha foto"
-    />
+    <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 lg:short:w-52 lg:short:h-52 rounded-full overflow-hidden bg-gray-200">
+      <img src={src} alt={alt} className="w-full h-full object-cover" />
+    </div>
   );
 };
 
