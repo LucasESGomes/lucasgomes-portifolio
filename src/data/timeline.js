@@ -4,14 +4,14 @@ export const timeline = [
     title: "Engenharia de Software (UMC)",
     duration: "Cursando",
     description:
-      "Graduação em Engenharia de Software na Universidade de Mogi das Cruzes, estudando arquitetura e sistemas de grande porte enquanto desenvolvo o Shared Resources em TypeScript e Docker.",
+      "Graduação em Engenharia de Software na Universidade de Mogi das Cruzes. Atualmente desenvolvendo arquitetura de sistemas, aplicação de metódoligias agéis. Stack em que opero: Docker, python, PostgreSQL, Lucidchart e Figma.",
   },
   {
     period: "2024 - 2025",
-    title: "Técnico em Mecatrônica (SENAI)",
+    title: "Desenvolvimento de Sistemas",
     duration: "2 anos",
     description:
-      "Formação técnica que juntou eletrônica e software. Liderei o front-end do Senai ID, a carteirinha digital da escola, e participei do SMEFCC, um controle de ferramentas por RFID que substituiu o registro manual de empréstimos.",
+      "Formação técnica que me possibilitou a criações de Apps WEB e Mobile, com forte em Javascript e Typescript + Frameworks. Tecnologia embarcada em linguagem C, Arduino e automatização de processos.",
   },
   {
     period: "2024 - Atual",

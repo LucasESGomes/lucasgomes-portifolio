@@ -10,7 +10,7 @@ export const contact = {
     "sua ideia, do zero",
   ],
   message:
-    "Entre em contato para podermos trabalhar juntos. Freela, projeto acadêmico ou aquela ideia parada na gaveta — me chama que a gente tira do papel.",
+    "Entre em contato para desenvolvermos a sua ideia de SAAS, projeto ou colaborar com times profissionais de TI",
   button: "Entre em contato",
   subject: "Vamos trabalhar juntos",
   location: "Mogi das Cruzes - SP",

@@ -1,13 +1,14 @@
-import { SiClaude, SiDocker, SiFastify, SiPostman, SiTypescript } from "react-icons/si";
+import { SiDocker, SiFastify, SiJavascript, SiPostman, SiTypescript } from "react-icons/si";
 
 export const skills = [
   {
     title: "FRONT-END",
     description:
       "Interfaces em React e Tailwind, do protótipo no Figma ao deploy na Vercel. Fui o responsável pelo front-end do Senai ID, meu TCC no SENAI, que trocou as carteirinhas físicas por digitais.",
-    src: "/img/frontend.png",
+    src: "/img/skills/frontend.svg",
     tags: [
       { label: "React", icon: "/img/icon/react.png" },
+      { label: "JavaScript", Icon: SiJavascript },
       { label: "TypeScript", Icon: SiTypescript },
       { label: "Tailwind", icon: "/img/icon/tailwind.png" },
       { label: "Vite", icon: "/img/icon/vite.png" },
@@ -29,7 +30,6 @@ export const skills = [
       { label: "MongoDB", icon: "/img/icon/mongoDb.png" },
       { label: "Python", icon: "/img/icon/python.png" },
       { label: "Postman", Icon: SiPostman },
-      { label: "Claude Code", Icon: SiClaude },
     ],
   },
   {
@@ -40,6 +40,7 @@ export const skills = [
     tags: [
       { label: "TypeScript", Icon: SiTypescript },
       { label: "Docker", Icon: SiDocker },
+      { label: "Claude Code", icon: "/img/icon/claude.png" },
       { label: "APIs" },
       { label: "Git", icon: "/img/icon/git.png" },
       { label: "Arduino / RFID" },
